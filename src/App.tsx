@@ -1,7 +1,5 @@
-const App = () => {
+export default function App() {
   return (
-    <div>Portfolio</div>
+    <div>portfolio empty template</div>
   )
 }
-
-export default App
