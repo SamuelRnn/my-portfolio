@@ -1,9 +1,29 @@
+@import "./fonts/fonts.css";
+@import "./styles/glitch.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: rgb(249 249 249);
+  background-color: rgb(17 17 17);
+  /* overflow: hidden; */
+  scroll-behavior: smooth;
 }
+::-webkit-scrollbar {
+  display: none;
+}
+html {
+  scrollbar-width: none !important;
+  /* scroll-snap-type: y mandatory; */
+}
+.writing {
+  writing-mode: vertical-lr;
+  line-height: 2rem;
+  font-size: 3.75rem;
+}
+
+/* .snap {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+} */
