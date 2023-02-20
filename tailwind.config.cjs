@@ -14,6 +14,9 @@ module.exports = {
       width: {
         main: "min(1200px,100%)",
       },
+      height: {
+        "start-banner": "calc(100vh - 10rem)",
+      },
     },
   },
   plugins: [],

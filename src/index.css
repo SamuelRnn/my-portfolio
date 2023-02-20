@@ -7,23 +7,19 @@
 :root {
   color: rgb(249 249 249);
   background-color: rgb(17 17 17);
-  /* overflow: hidden; */
   scroll-behavior: smooth;
+}
+.scroll-blocked {
+  overflow: hidden;
 }
 ::-webkit-scrollbar {
   display: none;
 }
 html {
   scrollbar-width: none !important;
-  /* scroll-snap-type: y mandatory; */
 }
 .writing {
   writing-mode: vertical-lr;
   line-height: 2rem;
   font-size: 3.75rem;
 }
-
-/* .snap {
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-} */
