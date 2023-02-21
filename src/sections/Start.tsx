@@ -1,26 +1,21 @@
-import { Nav } from "../components/Nav";
-import pfp from "@/assets/image.jpeg";
 import ContactBar from "@/components/ContactBar";
 import { motion } from "framer-motion";
 import { BsChevronDown } from "react-icons/bs";
-import { FaReact } from "react-icons/fa";
+import { Typewriter } from "react-simple-typewriter";
 
-export default function Header() {
+export default function Start() {
   const navigateToNext = () => {
     window.scroll({
-      top: 0 + window.innerHeight,
+      top: window.innerHeight,
     });
   };
   return (
-    <header
-      className="w-main mx-auto grid place-items-center h-screen relative overflow-hidden"
-      id="start"
-    >
-      <section className="flex flex-col items-center justify-around h-start-banner">
+    <div className="w-main mx-auto grid place-items-center relative overflow-x-hidden h-full">
+      <div className="flex flex-col items-center justify-around h-start-banner">
         <div className="mx-4 text-center">
           <center>
             <img
-              src={pfp}
+              src="./image.jpeg"
               alt="picture"
               className="sm:h-[250px] sm:w-[250px] h-[200px] w-[200px] rounded-t-full rounded-bl-full border-b-8 border-t-8 border-accent mb-3"
             />
@@ -31,11 +26,8 @@ export default function Header() {
           >
             <span>samuel rnn</span>
           </h1>
-          <h2
-            className="text-right sm:text-xl text-lg font-accent bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 
-          to-rose-500"
-          >
-            Sam Perez | Front End Developer
+          <h2 className="text-lg h-6 sm:text-right text-center bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-rose-500 font-mono font-bold">
+            <Typewriter words={["Sam Perez", "Front End Developer"]} />
           </h2>
 
           <div className="h-2 bg-accent mt-5 rounded-full relative">
@@ -61,7 +53,7 @@ export default function Header() {
             about me
           </p>
         </div>
-      </section>
+      </div>
 
       {/* stripe */}
       <motion.div
@@ -74,9 +66,7 @@ export default function Header() {
         <span className="writing rotate-180 font-titles">reactdev</span>
       </motion.div>
 
-      <ContactBar className="max-sm:hidden fixed" mode="fixed" />
-
-      <Nav />
-    </header>
+      <ContactBar className="max-md:hidden fixed" mode="fixed" />
+    </div>
   );
 }

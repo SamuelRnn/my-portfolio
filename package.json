@@ -6,13 +6,15 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "live": "tsc && vite build && cd dist && surge"
   },
   "dependencies": {
     "framer-motion": "^9.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
+    "react-simple-typewriter": "^5.0.1",
     "vite-tsconfig-paths": "^4.0.5"
   },
   "devDependencies": {

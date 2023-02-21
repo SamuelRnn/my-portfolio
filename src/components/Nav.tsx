@@ -3,16 +3,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu } from "react-icons/fi";
 import ContactBar from "./ContactBar";
 
-const scrollToSection = (section: string) => {
-  if (section === "start") {
-    window?.scroll({ top: 0 });
-  } else {
-    let sec = document.getElementById(section);
-    sec?.scrollIntoView(true);
-  }
-};
 export function Nav() {
   const [navTranslate, setNavTranslate] = useState(-70);
+
+  const scrollToSection = (section: string) => {
+    if (section === "start") {
+      window?.scroll({ top: 0 });
+    } else {
+      let sec = document.getElementById(section);
+      sec?.scrollIntoView(true);
+    }
+  };
 
   useEffect(() => {
     window.onscroll = () => {
@@ -22,49 +23,53 @@ export function Nav() {
   }, []);
   return (
     <>
-      <motion.nav
-        className="text-accent w-main fixed top-0 bg-main-dark z-50 hidden sm:block"
+      <motion.header
+        className="w-screen bg-main-dark fixed top-0 z-50  hidden md:block"
         initial={{ y: -70 }}
         animate={{ y: navTranslate }}
         transition={{ bounce: false }}
       >
-        <ul className="flex ml-auto w-fit items-center justify-end gap-8 h-16 font-accent uppercase font-bold text-transparent bg-gradient-to-r from-indigo-500 to-rose-500 mr-4 bg-clip-text">
-          <motion.li
-            onClick={() => scrollToSection("start")}
-            className="cursor-pointer hover:text-zinc-300 transition-colors ease-out duration-300"
-            whileHover={{ textShadow: "0 0 6px" }}
-          >
-            start
-          </motion.li>
+        <motion.nav className="text-accent w-main mx-auto bg-main-dark">
+          <ul className="flex ml-auto w-fit items-center justify-end gap-8 h-16 font-accent uppercase font-bold text-transparent bg-gradient-to-r from-indigo-500 to-rose-500 mr-4 bg-clip-text">
+            <motion.li
+              onClick={() => scrollToSection("start")}
+              className="cursor-pointer hover:text-zinc-300 transition-colors ease-out duration-300"
+              whileHover={{ textShadow: "0 0 6px" }}
+            >
+              start
+            </motion.li>
 
-          <motion.li
-            onClick={() => scrollToSection("aboutme")}
-            className="cursor-pointer hover:text-zinc-300 transition-colors ease-out duration-300"
-            whileHover={{ textShadow: "0 0 6px" }}
-          >
-            about me
-          </motion.li>
+            <motion.li
+              onClick={() => scrollToSection("aboutme")}
+              className="cursor-pointer hover:text-zinc-300 transition-colors ease-out duration-300"
+              whileHover={{ textShadow: "0 0 6px" }}
+            >
+              about me
+            </motion.li>
 
-          <motion.li
-            onClick={() => scrollToSection("mystack")}
-            className="cursor-pointer hover:text-zinc-300 transition-colors ease-out duration-300"
-            whileHover={{ textShadow: "0 0 6px" }}
-          >
-            my stack
-          </motion.li>
+            <motion.li
+              onClick={() => scrollToSection("mystack")}
+              className="cursor-pointer hover:text-zinc-300 transition-colors ease-out duration-300"
+              whileHover={{ textShadow: "0 0 6px" }}
+            >
+              my stack
+            </motion.li>
 
-          <motion.li
-            onClick={() => scrollToSection("projects")}
-            className="cursor-pointer hover:text-zinc-300 transition-colors ease-out duration-300"
-            whileHover={{ textShadow: "0 0 6px" }}
-          >
-            projects
-          </motion.li>
-        </ul>
-      </motion.nav>
+            <motion.li
+              onClick={() => scrollToSection("projects")}
+              className="cursor-pointer hover:text-zinc-300 transition-colors ease-out duration-300"
+              whileHover={{ textShadow: "0 0 6px" }}
+            >
+              projects
+            </motion.li>
+          </ul>
+        </motion.nav>
+      </motion.header>
 
       {/* mobile nav */}
-      <MobileNav />
+      <header className="w-screen bg-main-dark fixed top-0 z-50">
+        <MobileNav />
+      </header>
     </>
   );
 }
@@ -92,7 +97,7 @@ export function MobileNav() {
 
   return (
     <>
-      <nav className="sm:hidden h-16 fixed top-0 w-full flex justify-center items-center text-2xl bg-main-dark z-50">
+      <nav className="md:hidden h-16 fixed top-0 w-full flex justify-center items-center text-2xl bg-main-dark z-[80]">
         <button
           className={`mt-3 w-16 h-8 grid place-items-center rounded-md transition-colors duration-500 ${
             active && "bg-zinc-800"
@@ -150,7 +155,7 @@ export function MobileNav() {
                     projects
                   </li>
                 </ul>
-                <ContactBar className="absolute" mode="static" />
+                <ContactBar mode="static" />
               </nav>
             </motion.div>
           </>

@@ -37,7 +37,7 @@ export default function ContactBar({ className = "", mode }: Props) {
       {/* normal */}
       {mode === "fixed" && (
         <div
-          className={`flex justify-center md:justify-end fixed bottom-0 w-main mx-auto ${className}`}
+          className={`flex justify-end fixed bottom-0 w-main mx-auto ${className}`}
         >
           <motion.div
             className={`overflow-hidden rounded-t-3xl mx-4 pb-8 transition-colors duration-200 ease-out ${
@@ -142,84 +142,47 @@ export default function ContactBar({ className = "", mode }: Props) {
 
       {/* static (no close effect on scroll) */}
       {mode === "static" && (
-        <div
-          className={`flex justify-center md:justify-end fixed bottom-0 pb-8 w-main mx-auto ${className}`}
-        >
+        <div className={`flex justify-center p-8 ${className}`}>
           <div className="flex gap-x-3 px-4">
-            <motion.a
-              initial={{ y: 80 }}
-              animate={{ y: 0 }}
-              transition={{
-                delay: 0,
-                ease: "backInOut",
-                duration: 0.75,
-              }}
+            <a
               href={urls.github}
               target="_blank"
-              className="bg-zinc-800 rounded-full h-12 w-12 grid place-items-center text-2xl text-violet-500 shadow-md shadow-zinc-900 hover:text-zinc-300 transition-colors duration-300 ease-out"
+              className="bg-zinc-800 rounded-full h-12 w-12 grid place-items-center text-2xl text-violet-500 shadow-md shadow-zinc-900"
             >
               <FaGithub />
-            </motion.a>
+            </a>
 
-            <motion.a
-              initial={{ y: 80 }}
-              animate={{ y: 0 }}
-              transition={{
-                delay: 0.1,
-                ease: "backInOut",
-                duration: 0.75,
-              }}
+            <a
               href={urls.instagram}
               target="_blank"
-              className="bg-zinc-800 rounded-full h-12 w-12 grid place-items-center text-2xl text-rose-500 shadow-md shadow-zinc-900 hover:text-zinc-300 transition-colors duration-300 ease-out"
+              className="bg-zinc-800 rounded-full h-12 w-12 grid place-items-center text-2xl text-rose-500 shadow-md shadow-zinc-900"
             >
               <FaInstagram />
-            </motion.a>
+            </a>
 
-            <motion.a
-              initial={{ y: 80 }}
-              animate={{ y: 0 }}
-              transition={{
-                delay: 0.2,
-                ease: "backInOut",
-                duration: 0.75,
-              }}
+            <a
               href={urls.linkedin}
               target="_blank"
-              className="bg-zinc-800 rounded-full h-12 w-12 grid place-items-center text-2xl text-blue-500 shadow-md shadow-zinc-900 hover:text-zinc-300 transition-colors duration-300 ease-out"
+              className="bg-zinc-800 rounded-full h-12 w-12 grid place-items-center text-2xl text-blue-500 shadow-md shadow-zinc-900"
             >
               <FaLinkedinIn />
-            </motion.a>
+            </a>
 
-            <motion.a
-              initial={{ y: 80 }}
-              animate={{ y: 0 }}
-              transition={{
-                delay: 0.3,
-                ease: "backInOut",
-                duration: 0.75,
-              }}
+            <a
               href={urls.whatsapp}
               target="_blank"
-              className="bg-zinc-800 rounded-full h-12 w-12 grid place-items-center text-2xl text-emerald-500 shadow-md shadow-zinc-900 hover:text-zinc-300 transition-colors duration-300 ease-out"
+              className="bg-zinc-800 rounded-full h-12 w-12 grid place-items-center text-2xl text-emerald-500 shadow-md shadow-zinc-900"
             >
               <FaWhatsapp />
-            </motion.a>
+            </a>
 
-            <motion.a
-              initial={{ y: 80 }}
-              animate={{ y: 0 }}
-              transition={{
-                delay: 0.4,
-                ease: "backInOut",
-                duration: 0.75,
-              }}
+            <a
               href={urls.mail}
               target="_blank"
-              className="bg-zinc-800 rounded-full h-12 w-12 grid place-items-center text-2xl text-slate-500 shadow-md shadow-zinc-900 hover:text-zinc-300 transition-colors duration-300 ease-out"
+              className="bg-zinc-800 rounded-full h-12 w-12 grid place-items-center text-2xl text-slate-500 shadow-md shadow-zinc-900"
             >
               <FiMail />
-            </motion.a>
+            </a>
           </div>
         </div>
       )}

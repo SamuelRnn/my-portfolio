@@ -12,7 +12,7 @@ module.exports = {
         "main-dark": "rgb(17 17 17)",
       },
       width: {
-        main: "min(1200px,100%)",
+        main: "min(1200px,95%)",
       },
       height: {
         "start-banner": "calc(100vh - 10rem)",

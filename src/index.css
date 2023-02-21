@@ -8,15 +8,26 @@
   color: rgb(249 249 249);
   background-color: rgb(17 17 17);
   scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+* {
+  scrollbar-width: none !important;
+}
+main {
+  scroll-snap-type: y mandatory;
+}
+.snap {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 .scroll-blocked {
   overflow: hidden;
-}
-::-webkit-scrollbar {
-  display: none;
-}
-html {
-  scrollbar-width: none !important;
 }
 .writing {
   writing-mode: vertical-lr;
