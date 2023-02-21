@@ -112,7 +112,7 @@ export function MobileNav() {
           // modal
           <>
             <motion.div
-              className="fixed h-screen w-full bg-main-dark/80 backdrop-blur-sm"
+              className="fixed h-screen w-full bg-main-dark/90"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}

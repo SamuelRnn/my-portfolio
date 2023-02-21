@@ -18,20 +18,18 @@ export default function App() {
 
       <Nav />
 
-      <section className="h-screen snap" id="start">
+      <section className="h-screen" id="start">
         <Start />
       </section>
-      <main className="snap">
-        <section className="" id="aboutme">
-          <AboutMe />
-        </section>
-        <section className="min-h-screen" id="mystack">
-          <MyStack />
-        </section>
-        <section className="min-h-screen" id="projects">
-          <Projects />
-        </section>
-      </main>
+      <section className="" id="aboutme">
+        <AboutMe />
+      </section>
+      <section className="" id="mystack">
+        <MyStack />
+      </section>
+      <section className="" id="projects">
+        <Projects />
+      </section>
     </>
   );
 }
